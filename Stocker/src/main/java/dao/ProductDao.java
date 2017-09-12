@@ -48,8 +48,8 @@ public class ProductDao implements Dao<Product> {
 	}
 
 	public List<Product> findAll() {
-		  String SQL = "SELECT * FROM `product`";
-	      List<Product> products = jdbcTemplateObject.query(SQL, new ProductMapper());
+		  String query = "SELECT * FROM `product`";
+	      List<Product> products = jdbcTemplateObject.query(query, new ProductMapper());
 	      return products;
 	}
 
