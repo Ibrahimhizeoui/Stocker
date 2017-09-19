@@ -6,6 +6,7 @@
 
    <display-name>Stocker Application</display-name>
 
+	<!-- 
    <servlet>
       <servlet-name>Stocker</servlet-name>
       <servlet-class>
@@ -18,5 +19,6 @@
       <servlet-name>Stocker</servlet-name>
       <url-pattern>/</url-pattern>
    </servlet-mapping>
+   -->
  
 </web-app>

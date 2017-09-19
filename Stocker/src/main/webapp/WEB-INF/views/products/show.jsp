@@ -1,12 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Show</title>
-</head>
-<body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-</body>
-</html>
+
+    <div class="row">
+		<div class="col-md-4">
+            
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="http://placehold.it/210x210" class="img-rounded" alt="Cinque Terre" width="210" height="210">    
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px">
+                    <div class="col-md-3">
+                        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">    
+                    </div>
+                    <div class="col-md-3">
+                        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">    
+                    </div>
+                    <div class="col-md-3">
+                        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">    
+                    </div>
+                </div>
+        
+		</div>
+        <div class="col-md-8">
+             <div class="product-title">${product.name}</div>
+        			<div class="product-desc"><b>Category :</b> ${category.name}</div>
+                    <div class="product-desc"><b>Quantity :</b> ${product.quantity}</div>
+                    <div class="product-desc"><b>Created at</b> ${product.createdAt}</div>
+                    <div class="product-desc"><b>Updated at</b> ${product.updatedAt}</div>
+					<hr>
+					<div class="product-price">$ ${product.price}</div>
+			</div>   
+        </div>
+	</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+    		<ul class="nav nav-tabs nav_tabs">
+				<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a>
+                 <p>${product.description} </p>			
+                 </li>
+			</ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-11">
+            <button type="button" class="btn btn-primary">Primary</button>
+        </div>
+    </div>

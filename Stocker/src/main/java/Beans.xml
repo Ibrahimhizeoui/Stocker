@@ -3,17 +3,7 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id = "Parent" class = "beans.Parent" scope = "prototype">
-   <constructor-arg type = "java.lang.String" value="h1"/>
-   <constructor-arg type = "java.lang.String" value="h2"/>
-   <property name = "Child">
-   <bean id="Child" class="beans.Child">
-	<property name="message1" value="h3"></property>
-	</bean>
-   </property>	
-   </bean>
-
-	
+   
 	<bean id = "dataSource" 
       class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name = "driverClassName" value = "com.mysql.jdbc.Driver"/>

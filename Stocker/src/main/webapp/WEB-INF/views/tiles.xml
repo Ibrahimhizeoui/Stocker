@@ -15,4 +15,35 @@
 	<put-attribute name="body" value="/WEB-INF/views/products/products.jsp" />
 </definition>
 
+<definition name="/products/add" extends="base">
+	<put-attribute name="title" value="Add product" />
+	<put-attribute name="body" value="/WEB-INF/views/products/add.jsp" />
+</definition>
+
+<definition name="/products/edit" extends="base">
+	<put-attribute name="title" value="Edit product" />
+	<put-attribute name="body" value="/WEB-INF/views/products/edit.jsp" />
+</definition>
+
+<definition name="/products/show" extends="base">
+	<put-attribute name="title" value="Show product" />
+	<put-attribute name="body" value="/WEB-INF/views/products/show.jsp" />
+</definition>
+
+<!--                                       -->
+
+<definition name="/categories/categories" extends="base">
+	<put-attribute name="title" value="List of categories" />  
+	<put-attribute name="body" value="/WEB-INF/views/categories/categories.jsp" />
+</definition>
+
+<definition name="/categories/add" extends="base">
+	<put-attribute name="title" value="Add category" />
+	<put-attribute name="body" value="/WEB-INF/views/categories/add.jsp" />
+</definition>
+
+<definition name="/categories/edit" extends="base">
+	<put-attribute name="title" value="Edit category" />
+	<put-attribute name="body" value="/WEB-INF/views/categories/add.jsp" />
+</definition>
 </tiles-definitions>

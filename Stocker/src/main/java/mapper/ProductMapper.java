@@ -17,6 +17,7 @@ public class ProductMapper implements RowMapper<Product> {
 		      product.setQuantity(rs.getInt("quantity"));
 		      product.setcreatedAt(rs.getTimestamp("created_at"));
 		      product.setupdatedAt(rs.getTimestamp("updated_at"));
+		      product.setCategoryId(rs.getInt("category_id"));
 		      System.out.println(product.toString());
 		      return product;
 		   }

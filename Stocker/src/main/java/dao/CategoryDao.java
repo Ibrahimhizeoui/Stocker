@@ -21,7 +21,7 @@ public class CategoryDao implements Dao<Category> {
 	   }
 	public Category create(Category obj) {
 		String query = "INSERT INTO `categories` (`id`, `category_id`, `name`) VALUES (NULL, ?, ?)";
-		this.jdbcTemplateObject.update(query, obj.getName(),obj.getCategory_id());
+		this.jdbcTemplateObject.update(query, obj.getCategoryId() ,obj.getName());
 		return obj;
 	}
 
@@ -33,7 +33,7 @@ public class CategoryDao implements Dao<Category> {
 
 	public Category update(Category obj) {
 		String query = "UPDATE `categories` SET `category_id` = ?, `name` = ? WHERE `categories`.`id` = ?";
-		this.jdbcTemplateObject.update(query, obj.getName(),obj.getCategory_id());
+		this.jdbcTemplateObject.update(query, obj.getName(),obj.getCategoryId());
 		return obj;
 	}
 

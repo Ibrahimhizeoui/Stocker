@@ -21,9 +21,9 @@ public class ProductDao implements Dao<Product> {
 	   }
 
 	public Product create(Product obj) {
-		String query = "INSERT INTO `product` (`id`, `name`, `price`, `quantity`, `description`, `created_at`, `updated_at`)"
-				+ "     VALUES (NULL, ?, ?, ?, ?, ?, null)";
-		jdbcTemplateObject.update(query,obj.getName(),obj.getPrice(),obj.getQuantity(),obj.getDescription(),obj.getcreatedAt());
+		String query = "INSERT INTO `product` (`id`, `name`, `price`, `quantity`, `description`, `created_at`, `updated_at`, `category_id`)"
+				+ "     VALUES (NULL, ?, ?, ?, ?, ?, null, ?)";
+		jdbcTemplateObject.update(query,obj.getName(),obj.getPrice(),obj.getQuantity(),obj.getDescription(),obj.getcreatedAt(),obj.getCategoryId());
 	      
 		return obj;
 	}
@@ -35,9 +35,10 @@ public class ProductDao implements Dao<Product> {
 				+ "`price` = ?, "
 				+ "`quantity` = ?, "
 				+ "`description` = ?,"
-				+ "`updated_at` = ?"
+				+ "`updated_at` = ?,"
+				+ "`category_id` = ?"
 				+ " WHERE `product`.`id` = ?";
-		jdbcTemplateObject.update(query,obj.getName(),obj.getPrice(),obj.getQuantity(),obj.getDescription(),new Timestamp(new Date().getTime()),obj.getId());	
+		jdbcTemplateObject.update(query,obj.getName(),obj.getPrice(),obj.getQuantity(),obj.getDescription(),new Timestamp(new Date().getTime()),obj.getCategoryId(), obj.getId());	
 		return obj;
 	}
 

@@ -4,7 +4,13 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class Product{
-	private int id,quantity;
+	private int id,quantity,categoryId;
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
 	private String name,description,price;
 	private Timestamp createdAt;
 	private Timestamp updatedAt;
@@ -56,9 +62,12 @@ public class Product{
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", quantity=" + quantity + ", name=" + name + ", description=" + description
-				+ ", price=" + price + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
+		return "Product [id=" + id + ", quantity=" + quantity + ", categoryId=" + categoryId + ", name=" + name
+				+ ", description=" + description + ", price=" + price + ", createdAt=" + createdAt + ", updatedAt="
+				+ updatedAt + "]";
 	}
+	
+	
 	
 	
 	
