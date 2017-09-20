@@ -6,7 +6,7 @@
             
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="http://placehold.it/210x210" class="img-rounded" alt="Cinque Terre" width="210" height="210">    
+                        <img src="C:\xampp\htdocs\jee-lab\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\work\Catalina\localhost\Stocker\tmp\${product.id}" class="img-rounded" alt="Cinque Terre" width="210" height="210">    
                     </div>
                 </div>
                 <div class="row" style="margin-top: 5px">

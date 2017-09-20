@@ -1,6 +1,9 @@
 package controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.Part;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.servlet.ModelAndView;
 
 import beans.Category;
@@ -56,11 +60,16 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/add", method =  RequestMethod.POST)
-	public ModelAndView addAction(@ModelAttribute("SpringWeb")Product product) {
+	public ModelAndView addAction(@ModelAttribute("SpringWeb")Product product, @RequestPart("profilePicture") Part profilePicture) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		ProductDao productDao = (ProductDao)context.getBean("productDao");
 		Product productCreated = productDao.create(product);
-		System.out.println("this is "+product.toString());
+		try {
+			profilePicture.write(String.valueOf(productCreated.getId()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ModelAndView model = new ModelAndView("redirect:/products");
 		return model;
 	}

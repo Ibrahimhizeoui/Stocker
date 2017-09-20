@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <h3 id="test">list of product</h3>
 <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">Add product</button>
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -15,7 +16,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            
           </div>
         </div>
       </div>
@@ -56,7 +57,11 @@
                 	<td>${product.quantity}</td>
                 	<td>category</td>
                 	<td>${product.createdAt}</td>
-					<td><a href="edit/${product.id}"><i class="fa fa-edit" aria-hidden="true"></i></a> <a href="delete/${product.id}"><i class="fa fa-window-close" aria-hidden="true"></i></a></td>
+					<td>
+						<a href="products/edit/${product.id}"><i class="fa fa-edit" aria-hidden="true"></i></a>
+						<a href="products/show/${product.id}"><i class="fa fa-id-card-o" aria-hidden="true"></i></a> 
+						<a href="products/delete/${product.id}"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+					</td>
 					
                     
                   </tr>
