@@ -46,4 +46,8 @@
 	<put-attribute name="title" value="Edit category" />
 	<put-attribute name="body" value="/WEB-INF/views/categories/add.jsp" />
 </definition>
+
+<definition name="/security/login" template="/WEB-INF/views/security/login.jsp">
+	
+</definition>
 </tiles-definitions>

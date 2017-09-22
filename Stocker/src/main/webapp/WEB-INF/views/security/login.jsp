@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="t"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,13 +14,13 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value='vendor/bootstrap/css/bootstrap.min.css'/> " rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value='vendor/font-awesome/css/font-awesome.min.css' />" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="<c:url value='css/sb-admin.css' />" rel="stylesheet">
 
   </head>
 
@@ -60,8 +61,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<c:url value='vendor/jquery/jquery.min.js'/>"></script>
+    <script src="<c:url value='vendor/popper/popper.min.js'/>"></script>
+    <script src="<c:url value='vendor/bootstrap/js/bootstrap.min.js'/>"></script>
 
 </html>
