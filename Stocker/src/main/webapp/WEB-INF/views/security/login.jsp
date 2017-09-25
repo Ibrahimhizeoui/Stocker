@@ -12,15 +12,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Login</title>
-
+	<style>
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}</style>
     <!-- Bootstrap core CSS -->
-    <link href="<c:url value='vendor/bootstrap/css/bootstrap.min.css'/> " rel="stylesheet">
+    <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css'/> " rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="<c:url value='vendor/font-awesome/css/font-awesome.min.css' />" rel="stylesheet" type="text/css">
+    <link href="<c:url value='/resources/vendor/font-awesome/css/font-awesome.min.css' />" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="<c:url value='css/sb-admin.css' />" rel="stylesheet">
+    <link href="<c:url value='/resources/css/sb-admin.css' />" rel="stylesheet">
 
   </head>
 
@@ -32,15 +41,18 @@
         <div class="card-header">
           Login
         </div>
+        <c:if test="${not empty error}">
+			<div class="error">${error}</div>
+		</c:if>
         <div class="card-body">
-          <form>
+          <form action="${loginUrl}" method='post'>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <input type="text" class="form-control" id="exampleInputEmail1" name='username' aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="exampleInputPassword1" name='password' placeholder="Password">
             </div>
             <div class="form-group">
               <div class="form-check">
@@ -50,7 +62,10 @@
                 </label>
               </div>
             </div>
-            <a class="btn btn-primary btn-block" href="index.html">Login</a>
+            <input type="hidden"
+                     name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <input name="submit" type="submit" value="submit" class="btn btn-primary btn-block" />
+            
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="register.html">Register an Account</a>
@@ -61,8 +76,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="<c:url value='vendor/jquery/jquery.min.js'/>"></script>
-    <script src="<c:url value='vendor/popper/popper.min.js'/>"></script>
-    <script src="<c:url value='vendor/bootstrap/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor/jquery/jquery.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor/popper/popper.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor/bootstrap/js/bootstrap.min.js'/>"></script>
 
 </html>

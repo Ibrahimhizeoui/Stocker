@@ -10,6 +10,12 @@
 	<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
 </definition>
 
+<definition name="/default/dashboard" extends="base">
+	<put-attribute name="title" value="dashboard" />  
+	<put-attribute name="body" value="/WEB-INF/views/default/dashboard.jsp" />
+</definition>
+
+
 <definition name="/products/products" extends="base">
 	<put-attribute name="title" value="List of products" />  
 	<put-attribute name="body" value="/WEB-INF/views/products/products.jsp" />

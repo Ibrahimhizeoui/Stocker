@@ -223,7 +223,7 @@
             </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link">
+            <a class="nav-link" href="logout">
               <i class="fa fa-fw fa-sign-out"></i>
               Logout</a>
           </li>

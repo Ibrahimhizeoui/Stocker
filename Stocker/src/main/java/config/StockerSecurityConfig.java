@@ -24,19 +24,18 @@ public class StockerSecurityConfig extends WebSecurityConfigurerAdapter  {
         http
         .authorizeRequests()
         .antMatchers("/").anonymous()
-        .antMatchers("/login*").anonymous()
+        .antMatchers("/resources/**").permitAll()
+        .antMatchers("/login").anonymous()
+        .antMatchers("/products**").access("hasRole('ADMIN')")
         .anyRequest().authenticated()
         .and()
-        .formLogin()
-        .loginPage("/login")
-        .and()
-        .logout().logoutSuccessUrl("/login.html");
-          
+        .formLogin().loginPage("/login").failureUrl("/login?error")
+	    .usernameParameter("username").passwordParameter("password")
+	    .and().logout().logoutSuccessUrl("/login?logout")
+        .and().csrf()
+	    .and().exceptionHandling().accessDeniedPage("/Access_Denied");
     }
-    @Override
-    public void configure(WebSecurity http) throws Exception {
-    	http.ignoring().antMatchers("/WEB-INF/resources/**").anyRequest();
-    }
+    
     
 
 }
